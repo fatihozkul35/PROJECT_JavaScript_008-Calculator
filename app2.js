@@ -58,10 +58,10 @@ const comma = document.getElementById("comma");
 const result = document.getElementById("result");
 
 const buttons = document.querySelectorAll(".btn");
-
+let commaStatus = false;
 buttons.forEach(function (btn) {
-  let commaStatus = false;
   btn.addEventListener("click", () => {
+    console.log(commaStatus);
     switch (btn.value) {
       case "undefined":
         if (btn.id === "clear") {
@@ -84,18 +84,20 @@ buttons.forEach(function (btn) {
           textAreaTop.textContent.slice(-1) === "+" ||
           textAreaTop.textContent.slice(-1) === "-"
         ) {
-          console.log("2");
           textAreaTop.textContent += "0.";
           commaStatus = true;
+          console.log(commaStatus);
         } else {
-          console.log("3");
           textAreaTop.textContent += ".";
           commaStatus = true;
+          console.log(commaStatus);
         }
         return;
       case "=":
         textAreaTop.textContent = textAreaBottom.textContent;
         textAreaBottom.textContent = "";
+        commaStatus = false;
+        console.log(commaStatus);
         return;
       default:
         if (
@@ -108,9 +110,8 @@ buttons.forEach(function (btn) {
           if (isNaN(textAreaTop.textContent.slice(-1))) {
             textAreaTop.textContent = textAreaTop.textContent.slice(0, -1);
           }
-          console.log("4");
-          console.log(commaStatus);
           commaStatus = false;
+          console.log(commaStatus);
         }
         console.log(commaStatus);
         textAreaTop.textContent += btn.value;
@@ -119,92 +120,6 @@ buttons.forEach(function (btn) {
     }
   });
 });
-//*******************TEST SECTION */
-// console.log(eval("55+5.5"));
-// var str = "Hello TecAdmin!";
-// var newStr = str.slice(0, -1);
-
-// console.log(newStr);
-
-// let text = "Hello planet earth, you are a great planet.";
-// console.log(text.slice(-1));
-//*********************************************************** */
-// function reset() {}
-
-// const buttons = document.querySelectorAll(".btn");
-// buttons.forEach(function (btn) {
-//   btn.addEventListener("click", (e) => {
-//     let clickButton = e.currentTarget.textContent;
-//     let firstNumber = +textAreaTop.textContent;
-//     let secondNumber = textAreaTop.textContent;
-//     reset(clickButton);
-//     deleteSingleDigit(clickButton);
-//     plusMinus(clickButton);
-//     display(clickButton);
-//     console.log(firstNumber);
-//     if (division) {
-//       secondNumber = display(clickButton);
-//       firstNumber = firstNumber / secondNumber;
-//     }
-//   });
-// });
-// //****Display fonksiyonu(isNAN and comma) */
-
-// function display(clickButton) {
-//   if (
-//     !isNaN(clickButton) ||
-//     clickButton == "," ||
-//     clickButton == "/" ||
-//     clickButton == "*" ||
-//     clickButton == "-" ||
-//     clickButton == "+"
-//   ) {
-//     return (textAreaTop.textContent += clickButton);
-//   }
-// }
-// const operation = function (clickButton) {
-//   if (clickButton == "/") {
-//     division = true;
-//   } else if (clickButton == "*") {
-//     multiplication = true;
-//   }
-// };
-// //********Division */
-// const divisionFunction = function () {};
-
-// //*****AC (RESET) Function*/
-function reset() {
-  textAreaTop.innerHTML = "";
-}
-//***** eksi/artı Function*/
-
-function minusPlus() {
-  textAreaTop.innerHTML = 0 - textAreaTop.textContent;
-}
-
-//***** Delete single digit Function*/
-
-function deleteSingleDigit() {
-  textAreaTop.textContent = textAreaTop.textContent.slice(
-    0,
-    textAreaTop.textContent.length - 1
-  );
-}
-
-// //********multiplication */
-// const multiplicationFunction = function (a, b) {
-//   return a * b;
-// };
-
-// //********subtraction */
-// const subtractionFunction = function (a, b) {
-//   return a - b;
-// };
-
-// //********addition */
-// const additionFunction = function (a, b) {
-//   return a + b;
-// };
 
 //*********************** Functions */
 function displayButtons(data) {
@@ -218,5 +133,3 @@ function displayButtons(data) {
   button = button.join("");
   btnsSection.innerHTML = button;
 }
-
-//************** Display value function*/

@@ -9,18 +9,17 @@ body {
   justify-content: center;
   align-items: center;
 }
+main.container {
+  background-color: black;
+  opacity: 0.8;
+  width: 400px;
+  border-radius: 25px;
+}
+
 p {
   height: 20vh;
   color: white;
   font-size: 2rem;
-}
-section {
-  width: 400px;
-}
-
-.container {
-  background-color: black;
-  width: 400px;
 }
 
 .btn {
@@ -34,4 +33,5 @@ section {
   font-size: 16px;
   cursor: pointer;
   border-radius: 50%;
+  margin: 0px;
 }
