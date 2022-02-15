@@ -19,7 +19,7 @@ main.container {
 p {
   height: 20vh;
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .btn {
@@ -30,8 +30,65 @@ p {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1.5rem;
   cursor: pointer;
   border-radius: 50%;
-  margin: 0px;
+}
+
+#clear,
+#toggle,
+#deletE {
+  background-color: #a6a6a6;
+  color: black;
+}
+#clear:hover,
+#toggle:hover,
+#deletE:hover {
+  background-color: black;
+  color: #a6a6a6;
+}
+
+#division,
+#multiplication,
+#subtraction,
+#addition,
+#result {
+  background-color: #ff9501;
+  color: aliceblue;
+}
+#division:hover,
+#multiplication:hover,
+#subtraction:hover,
+#addition:hover,
+#result:hover {
+  background-color: aliceblue;
+  color: #ff9501;
+}
+#btn1,
+#btn2,
+#btn3,
+#btn4,
+#btn5,
+#btn6,
+#btn7,
+#btn8,
+#btn9,
+#btn0,
+#comma {
+  background-color: #333333;
+  color: #e2e2e2;
+}
+#btn1:hover,
+#btn2:hover,
+#btn3:hover,
+#btn4:hover,
+#btn5:hover,
+#btn6:hover,
+#btn7:hover,
+#btn8:hover,
+#btn9:hover,
+#btn0:hover,
+#comma:hover {
+  background-color: #e2e2e2;
+  color: #333333;
 }

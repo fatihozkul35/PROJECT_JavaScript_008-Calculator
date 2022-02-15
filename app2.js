@@ -2,9 +2,9 @@
 
 const data = [
   { id: "clear", innerItem: "AC", value: "undefined" },
-  { id: "toggle", innerItem: "+/-", value: "undefined" },
-  { id: "deletE", innerItem: "ok", value: "undefined" },
-  { id: "division", innerItem: "/", value: "/" },
+  { id: "toggle", innerItem: "±", value: "undefined" },
+  { id: "deletE", innerItem: "<", value: "undefined" },
+  { id: "division", innerItem: "÷", value: "/" },
   { id: "btn7", innerItem: "7", value: "7" },
   { id: "btn8", innerItem: "8", value: "8" },
   { id: "btn9", innerItem: "9", value: "9" },
@@ -120,12 +120,11 @@ buttons.forEach(function (btn) {
     }
   });
 });
-
 //*********************** Functions */
 function displayButtons(data) {
   let button = data.map(function (e) {
     if (e.innerItem === "0") {
-      return `<button id=${e.id} class="btn col-6" value=${e.value}>${e.innerItem}</button>`;
+      return `<button id=${e.id} class="btn col-6 rounded-pill" value=${e.value}>${e.innerItem}</button>`;
     } else {
       return `<button id=${e.id} class="btn col" value=${e.value}>${e.innerItem}</button>`;
     }
